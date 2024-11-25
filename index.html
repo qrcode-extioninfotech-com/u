@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Certificate Details</title>
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="alternate" type="application/rss+xml" href="https://me-qr.com/feed.rss">
+    <meta name="description" content="Making free QR Codes in different types. Create, track, share and scan QR codes online with ME-QR!">
+    <meta name="keywords" content="qr code generator, free qr code, create qr code online, qr barcode, free qr code, barcode maker">
+    <link href="https://me-qr.com/assets/css/material-kit.min.css?v=1" rel="stylesheet"/>
+    <link href="https://me-qr.com/assets/css/base-style.css" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="https://me-qr.com/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="QR code generator - free | Make QR code for link, image or PDF file - ME-QRGiant QR Code Generator | QR with logo | Custom QR codes"/>
+    <meta property="og:locale" content="en"/>
+    <meta property="og:description" content="Making free QR Codes in different types. Create, track, share and scan QR codes online with ME-QR!"/>
+    <meta property="og:image" content="https://me-qr.com/static/pages/logo/logo-v2.jpg">
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+        .text-tiny { font-size: .7em; }
+        .text-small { font-size: .85em; }
+        .text-big { font-size: 1.4em; }
+        .text-huge { font-size: 1.8em; }
+        .modal-cookies { width: 100%; bottom: 0; right: 0; z-index: 1060; }
+        @media (max-width: 575px) {
+            .modal-cookies p { font-size: 12px; text-align: justify; }
+            .modal-cookies button { font-size: 14px; }
+        }
+        @media (min-width: 576px) {
+            .modal-cookies { width: 373px; right: 72px; bottom: 33px; }
+        }
+    </style>
+</head>
+<body class="landing-page sidebar-collapse">
+    <div class="container-fluid p-4">
+        <p>EXTION INFOTECH VERIFICATION</p>
+        <p>Id : <span id="certificate-id"></span></p>
+        <p>Full Name :&nbsp; <span id="full-name"></span></p>
+        <p>Duration : &nbsp; &nbsp; 01-12-2024 to 01-02-2025</p>
+        <p>Internship :&nbsp; Artificial Intelligence and Machine Learning</p>
+        <p>For more information</p>
+        <p>Write us : <a href="mailto:info@extioninfotech.com">info@extioninfotech.com</a></p>
+        <p>www.extioninfotech.com</p>
+        <p>The above candidate is found well performed intern and applied his/her full enthusiasm and knowledge towards his/her tasks. Congratulations on completing your internship and best wishes for the future…</p>
+        <p>For any query or assistance about Certificate feel free to WhatsApp on +918445361338</p>
+    </div>
+
+    <script>
+        // Function to extract query parameters
+        function getQueryParams(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Generate random ID
+        function generateRandomId() {
+            return Math.floor(Math.random() * 1e12).toString();
+        }
+
+        // Get name from URL and generate ID
+        const name = getQueryParams('name') || 'Unknown';
+        const randomId = generateRandomId();
+
+        // Update the page with name and ID
+        document.getElementById('full-name').textContent = name;
+        document.getElementById('certificate-id').textContent = randomId;
+    </script>
+</body>
+</html>
