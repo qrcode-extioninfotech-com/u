@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <title>EXTION INFOTECH Certificate</title>
-    <link rel="icon" type="image/png" href="favicon.ico">
+<!--     <link rel="icon" type="image/png" href="favicon.ico"> -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon.ico">
     <link rel="alternate" type="application/rss+xml" href="https://me-qr.com/feed.rss">
     <meta name="description" content="Making free QR Codes in different types. Create, track, share and scan QR codes online with ME-QR!">
     <meta name="keywords" content="qr code generator, free qr code, create qr code online, qr barcode, free qr code, barcode maker">
@@ -54,18 +56,27 @@
             return urlParams.get(param);
         }
 
-        // Generate random ID
-        function generateRandomId() {
-            return Math.floor(Math.random() * 1e12).toString();
+        // Generate unique ID for the name and store it in localStorage
+        function getOrGenerateId(name) {
+            const storedId = localStorage.getItem(name); // Check if ID exists for this name
+            if (storedId) {
+                return storedId; // Return existing ID
+            } else {
+                const newId = Math.floor(Math.random() * 1e12).toString(); // Generate new ID
+                localStorage.setItem(name, newId); // Store new ID in localStorage
+                return newId;
+            }
         }
 
-        // Get name from URL and generate ID
+        // Get name from URL
         const name = getQueryParams('name') || 'Unknown';
-        const randomId = generateRandomId();
+
+        // Get or generate a unique ID for the name
+        const uniqueId = getOrGenerateId(name);
 
         // Update the page with name and ID
         document.getElementById('full-name').textContent = name;
-        document.getElementById('certificate-id').textContent = randomId;
+        document.getElementById('certificate-id').textContent = uniqueId;
     </script>
 </body>
 </html>
